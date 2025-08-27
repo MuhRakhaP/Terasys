@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERASYS - Leading Technology Solutions & Digital Innovation</title>
+    <meta name="description" content="TERASYS delivers cutting-edge technology solutions, software development, mobile applications, and digital transformation services. Trusted by industry leaders worldwide." />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{asset (path:'js/lucide.js')}}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+
+                    <img src="{{ asset(path: 'img/LOGO TERASYS.png') }}" alt="TERASYS Logo" style="height:50px;">
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">HOME</a>
+                    <a href="#about" class="nav-link">ABOUT</a>
+                    <a href="#services" class="nav-link">SERVICES</a>
+                    <a href="#clients" class="nav-link">CLIENTS</a>
+                    <a href="#news" class="nav-link">NEWS</a>
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </div>
+
+                <button class="btn btn-primary">Get Started</button>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge animated">NEXT-GENERATION TECHNOLOGY</div>
+                    <h1 class="hero-title">
+                        Enterprise IT Solutions & <br>Network Infrastructure
+                    </h1>
+                <p class="hero-subtitle">Transforming your business with secure, scalable, and innovative technology.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-hero">Explore Solutions</button>
+                    <button class="btn btn-outline">Watch Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header section-animate">
+                <span class="section-badge">PRODUCTS & SERVICES</span>
+                <h2>Innovative Solutions for Your Business</h2>
+                <p>We provide comprehensive technology solutions to help your business thrive in the digital landscape</p>
+            </div>
+
+           <div class="services-grid section-animate">
+    <div class="service-card" onclick="window.location.href='{{ route('softwareDevelopment') }}'" style="cursor:pointer;">
+        <div class="service-icon">
+            <!-- ERP: database -->
+            <i data-lucide="database"></i>
+        </div>
+        <div class="service-content">
+            <span class="service-category">ERP</span>
+            <h3>ENTERPRISE RESOURCE PLANNING</h3>
+            <p>ERP is an integrated system that unifies finance, and operations in one platform.</p>
+            <a href="{{ route('softwareDevelopment') }}" class="service-link">Learn More →</a>
+        </div>
+    </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Internet Connection: wifi -->
+                        <i data-lucide="wifi"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-category">Internet</span>
+                        <h3>INTERNET CONNECTION</h3>
+                        <p>Reliable and high-speed internet connectivity solutions</p>
+                        <div class="service-link">Learn More →</div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Web & Server Hosting: server -->
+                        <i data-lucide="server"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-category">Web & Server</span>
+                        <h3>WEB & SERVER HOSTING</h3>
+                        <p>Modern responsive websites and server hosting solutions</p>
+                        <div class="service-link">Learn More →</div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Broadband Connection: activity -->
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-category">Broadband</span>
+                        <h3>BROADBAND CONNECTION</h3>
+                        <p>Broadband internet solutions for seamless connectivity</p>
+                        <div class="service-link">Learn More →</div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Server Co-location: hard-drive -->
+                        <i data-lucide="hard-drive"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-category">Server</span>
+                        <h3>SERVER CO-LOCATION</h3>
+                        <p>Server co-location services for enhanced performance</p>
+                        <div class="service-link">Learn More →</div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- LAN: link -->
+                        <i data-lucide="link"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-category">LAN</span>
+                        <h3>CONNECTION LOCAL AREA NETWORK</h3>
+                        <p>Reliable and high-speed local area network solutions</p>
+                        <div class="service-link">Learn More →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-header section-animate">
+                <span class="section-badge">TRUSTED BY INDUSTRY LEADERS</span>
+                <h2>Our Valued Partners</h2>
+                <p>We're proud to work with amazing companies around the world</p>
+            </div>
+
+            <div class="clients-grid section-animate">
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO TJ.png') }}" alt="Logo TJ" style="height:48px;"></div>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO UNIQLO.png') }}" alt="Logo Uniqlo" style="height:48px;"></div>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO NEC.png') }}" alt="Logo NEC" style="height:48px;"></div>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO YONGKI.png') }}" alt="Logo Yongki" style="height:48px;"></div>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO BAYER.png') }}" alt="Logo Bayer" style="height:48px;"></div>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">
+        <div class="client-card">
+            <img src="{{ asset('img/LOGO LINKNET.png') }}" alt="Logo Linknet" style="height:48px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content section-animate">
+                <div class="about-image">
+                    <div class="about-placeholder">
+
+                        <img src="{{ asset('img/KABEL.png') }}" alt="Kabel" class="about-full-img">
+                    </div>
+                    <div class="stat-card stat-1">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card stat-2">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <span class="section-badge">WHO WE ARE</span>
+                    <h2>Technology Leaders Driving Digital Innovation</h2>
+                    <p>Established in 2011 in Jakarta, we provide innovative IT solutions tailored to evolving global trends and business demands. With a strong commitment to customer satisfaction, we partner with our clients to achieve shared success and sustainable growth. Our reliable services empower businesses to adapt, transform, and thrive in a rapidly changing digital era.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i data-lucide="award"></i>
+                            <h4>Excellence</h4>
+                            <p>Award-winning solutions</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="target"></i>
+                            <h4>Precision</h4>
+                            <p>Targeted outcomes</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="users"></i>
+                            <h4>Collaboration</h4>
+                            <p>Team-driven approach</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header section-animate">
+                <span class="section-badge">WHAT'S HAPPENING</span>
+                <h2>Latest News & Updates</h2>
+                <p>Stay informed about our latest achievements, partnerships, and innovations in the tech industry</p>
+            </div>
+
+            <div class="news-grid section-animate">
+                <div class="news-card">
+                    <div class="news-image">
+                        <i data-lucide="trending-up"></i>
+                        <span class="news-category">Awards</span>
+                        <span class="trending-badge">🔥 Trending</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i data-lucide="calendar"></i>
+                            March 15, 2024
+                        </div>
+                        <h3>TERASYS Wins Tech Innovation Award 2024</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab eum dolore</p>
+                        <div class="news-link">Read More →</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <i data-lucide="trending-up"></i>
+                        <span class="news-category">Partnership</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i data-lucide="calendar"></i>
+                            March 10, 2024
+                        </div>
+                        <h3>New Partnership with Global Tech Leader</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab eum dolore</p>
+                        <div class="news-link">Read More →</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <i data-lucide="trending-up"></i>
+                        <span class="news-category">Product Launch</span>
+                        <span class="trending-badge">🔥 Trending</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i data-lucide="calendar"></i>
+                            March 5, 2024
+                        </div>
+                        <h3>Launching Next-Gen Cloud Solutions</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab eum dolore</p>
+                        <div class="news-link">Read More →</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">CONTACT WITH OUR TEAM</span>
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>Ready to transform your business? Get in touch with our experts and discover how we can help you achieve your goals.</p>
+            </div>
+
+            <div class="contact-content section-animate">
+                <div class="contact-form">
+                    <div class="form-card">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i data-lucide="send"></i>
+                                Send Message →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Address</h4>
+                                <b><br>Head Office</b><br> Gedung Cyber 1 Lt. 6<br>Jl. Kuningan Barat Raya Mampang<br>Prapatan Jakarta Selatan 12710, Indonesia</p>
+                                <br><b>Branch 1</b><br>Gedung STC Senayan Lt.3 No.181<br>Jl. Asia Afrika Pintu IX Gelora Senayan<br>Jakarta Pusat 10279 Indonesia</p>
+                                <br><b>Branch 2</b><br>Ruko Redwood Blok GD.XV No.43B<br>Metland Transyogi<br>Kab. Bogor, Kec. Cileungsi, Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="contact-cards-row">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Phone Number</h4>
+                                    <p>02129492292<br>+6281542310375</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email Address</h4>
+                                    <p>support@terasys.co.id</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <!-- Ganti teks TERASYS dengan logo -->
+
+                    <img src="{{ asset('img/LOGO TERASYS.png') }}" alt="TERASYS Logo" style="height:48px; margin-bottom:16px;">
+                    <p>
+                        TERASYS is a leading IT solutions provider, delivering innovative technology and digital transformation services to help businesses grow and succeed in the digital era.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Enterprise Resource Planning</a></li>
+                        <li><a href="#">Internet Connection</a></li>
+                        <li><a href="#">Web & Server Hosting</a></li>
+                        <li><a href="#">Broadband Connection</a></li>
+                        <li><a href="#">Server Co-location</a></li>
+                        <li><a href="#">LAN Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Clients</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <p>
+                                Gedung Cyber 1 Lt. 6<br>
+                                Jl. Kuningan Barat Raya Mampang<br>
+                                Jakarta Selatan 12710, Indonesia
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <p>021 2949 2292<br>+62 815 4231 0375</p>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <p>support@terasys.co.id</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 TERASYS. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>
