@@ -34,44 +34,44 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Form submission
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
+// document.querySelector("form").addEventListener("submit", function (e) {
+//     e.preventDefault();
 
-    // Get form data
-    const formData = new FormData(this);
-    const firstName =
-        formData.get("firstName") ||
-        this.querySelector('input[placeholder*="first name"]').value;
-    const lastName =
-        formData.get("lastName") ||
-        this.querySelector('input[placeholder*="last name"]').value;
-    const email =
-        formData.get("email") ||
-        this.querySelector('input[type="email"]').value;
-    const phone =
-        formData.get("phone") || this.querySelector('input[type="tel"]').value;
-    const message =
-        formData.get("message") || this.querySelector("textarea").value;
+//     // Get form data
+//     const formData = new FormData(this);
+//     const firstName =
+//         formData.get("firstName") ||
+//         this.querySelector('input[placeholder*="first name"]').value;
+//     const lastName =
+//         formData.get("lastName") ||
+//         this.querySelector('input[placeholder*="last name"]').value;
+//     const email =
+//         formData.get("email") ||
+//         this.querySelector('input[type="email"]').value;
+//     const phone =
+//         formData.get("phone") || this.querySelector('input[type="tel"]').value;
+//     const message =
+//         formData.get("message") || this.querySelector("textarea").value;
 
-    // Basic validation
-    if (!firstName || !lastName || !email || !message) {
-        alert("Please fill in all required fields.");
-        return;
-    }
+//     // Basic validation
+//     if (!firstName || !lastName || !email || !message) {
+//         alert("Please fill in all required fields.");
+//         return;
+//     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+//     // Email validation
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(email)) {
+//         alert("Please enter a valid email address.");
+//         return;
+//     }
 
-    // Show success message
-    alert("Thank you for your message! We will get back to you soon.");
+//     // Show success message
+//     alert("Thank you for your message! We will get back to you soon.");
 
-    // Reset form
-    this.reset();
-});
+//     // Reset form
+//     this.reset();
+// });
 
 // Animation on scroll
 const observerOptions = {
@@ -278,7 +278,7 @@ style.textContent = `
         position: relative;
         overflow: hidden;
     }
-    
+
     .ripple {
         position: absolute;
         border-radius: 50%;
@@ -287,18 +287,18 @@ style.textContent = `
         animation: ripple-animation 0.6s linear;
         pointer-events: none;
     }
-    
+
     @keyframes ripple-animation {
         to {
             transform: scale(4);
             opacity: 0;
         }
     }
-    
+
     .loaded {
         opacity: 1;
     }
-    
+
     body {
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -330,3 +330,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Logo click scroll to home
+document.addEventListener("DOMContentLoaded", function () {
+    const logo = document.getElementById("logo-link");
+    if (logo) {
+        logo.addEventListener("click", function (e) {
+            e.preventDefault();
+            const home = document.getElementById("home");
+            if (home) {
+                home.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    }
+});
+
+// Fade-in animation for clients section
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animated");
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    document
+        .querySelectorAll(".clients .section-animate")
+        .forEach((el) => observer.observe(el));
+});
