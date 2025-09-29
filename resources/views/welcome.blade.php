@@ -101,7 +101,8 @@
                     <div class="service-content">
                         <span class="service-category">.</span>
                         <h3>COMING SOON</h3>
-                        <p>Exciting new features are on the way !!!</p>
+                        <p>Exciting new features are on the way, bringing you fresh experiences and improvements that will
+                            make everything even better than before!</p>
                         {{-- <a href="{{ route(name: 'systemIntegratorService') }}" class="service-link">Learn More →</a> --}}
                     </div>
                 </div>
