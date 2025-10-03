@@ -1,4 +1,50 @@
 @extends('layouts.mainLayouts')
+<style>
+    .popup {
+        display: none;
+        /* hidden default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-content {
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .popup-close {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 
 @section('content')
     <section id="home" class="hero">
@@ -11,8 +57,57 @@
                 </h1>
                 <p class="hero-subtitle">Transforming your business with secure, scalable, and innovative technology.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-hero">Explore Solutions</button>
-                    <button class="btn btn-outline">Watch Demo</button>
+                    <button disabled class="btn btn-hero">Explore Solutions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content section-animate">
+                <div class="about-image">
+                    <div class="about-placeholder">
+
+                        <img src="{{ asset('img/KABEL.png') }}" alt="Kabel" class="about-full-img">
+                    </div>
+                    <div class="stat-card stat-1">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card stat-2">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <span class="section-badge">WHO WE ARE</span>
+                    <h2>Technology Leaders Driving Digital Innovation</h2>
+                    <p>Established in 2011 in Jakarta, we provide innovative IT solutions tailored to evolving global trends
+                        and business demands. With a strong commitment to customer satisfaction, we partner with our clients
+                        to achieve shared success and sustainable growth. Our reliable services empower businesses to adapt,
+                        transform, and thrive in a rapidly changing digital era.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i data-lucide="award"></i>
+                            <h4>Excellence</h4>
+                            <p>Award-winning solutions</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="target"></i>
+                            <h4>Precision</h4>
+                            <p>Targeted outcomes</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="users"></i>
+                            <h4>Collaboration</h4>
+                            <p>Team-driven approach</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -110,7 +205,6 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
     <section id="clients" class="clients">
         <div class="container">
             <div class="section-header section-animate">
@@ -118,105 +212,18 @@
                 <h2>Our Valued Partners</h2>
                 <p>We're proud to work with amazing companies around the world</p>
             </div>
-
-            <div class="clients-grid section-animate">
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO TJ.png') }}" alt="Logo TJ" style="height:48px;">
-                        </div>
-                    </div>
+            <div class="clients-logos section-animate">
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO TJ.png') }}" alt="Transjakarta">
                 </div>
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO UNIQLO.png') }}" alt="Logo Uniqlo" style="height:48px;">
-                        </div>
-                    </div>
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO UNIQLO.png') }}" alt="Uniqlo"></div>
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO NEC.png') }}" alt="NEC Technologies"></div>
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO YONGKI.png') }}" alt="Yongki Komaladi">
                 </div>
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO NEC.png') }}" alt="Logo NEC" style="height:48px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO YONGKI.png') }}" alt="Logo Yongki" style="height:48px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO BAYER.png') }}" alt="Logo Bayer" style="height:48px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="client-card">
-                    <div class="client-logo">
-                        <div class="client-card">
-                            <img src="{{ asset('img/LOGO LINKNET.png') }}" alt="Logo Linknet" style="height:48px;">
-                        </div>
-                    </div>
-                </div>
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO BAYER.png') }}" alt="Bayer"></div>
+                <div class="client-logo"><img src="{{ asset(path: 'img/LOGO LINKNET.png') }}" alt="Linknet"></div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content section-animate">
-                <div class="about-image">
-                    <div class="about-placeholder">
-
-                        <img src="{{ asset('img/KABEL.png') }}" alt="Kabel" class="about-full-img">
-                    </div>
-                    <div class="stat-card stat-1">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card stat-2">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Projects Done</div>
-                    </div>
-                </div>
-
-                <div class="about-text">
-                    <span class="section-badge">WHO WE ARE</span>
-                    <h2>Technology Leaders Driving Digital Innovation</h2>
-                    <p>Established in 2011 in Jakarta, we provide innovative IT solutions tailored to evolving global trends
-                        and business demands. With a strong commitment to customer satisfaction, we partner with our clients
-                        to achieve shared success and sustainable growth. Our reliable services empower businesses to adapt,
-                        transform, and thrive in a rapidly changing digital era.</p>
-
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <i data-lucide="award"></i>
-                            <h4>Excellence</h4>
-                            <p>Award-winning solutions</p>
-                        </div>
-                        <div class="feature-card">
-                            <i data-lucide="target"></i>
-                            <h4>Precision</h4>
-                            <p>Targeted outcomes</p>
-                        </div>
-                        <div class="feature-card">
-                            <i data-lucide="users"></i>
-                            <h4>Collaboration</h4>
-                            <p>Team-driven approach</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- News Section -->
     <section id="news" class="news">
@@ -284,4 +291,166 @@
 
         </div>
     </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header section-animate">
+                <span class="section-badge">CONTACT WITH OUR TEAM</span>
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>Ready to transform your business? Get in touch with our experts and discover how we can help you achieve
+                    your goals.</p>
+            </div>
+
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $err)
+                            <li>{{ $err }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span id="popupClose" class="popup-close">&times;</span>
+                    <h3 id="popupTitle"></h3>
+                    <p id="popupMessage"></p>
+                </div>
+            </div>
+
+            <div class="contact-content section-animate">
+                <div class="contact-form">
+                    <div class="form-card">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm" action="{{ route('contact.send') }}" method="POST">
+                            @csrf
+                            <div id="formMessage"></div> {{-- tempat alert --}}
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="first_name" placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="last_name" placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i data-lucide="send"></i>
+                                Send Message →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Address</h4>
+                                <b><br>Head Office</b><br> Gedung Cyber 1 Lt. 6<br>Jl. Kuningan Barat Raya
+                                Mampang<br>Prapatan Jakarta Selatan 12710, Indonesia</p>
+                                <br><b>Branch 1</b><br>Gedung STC Senayan Lt.3 No.181<br>Jl. Asia Afrika Pintu IX Gelora
+                                Senayan<br>Jakarta Pusat 10279 Indonesia</p>
+                                <br><b>Branch 2</b><br>Ruko Redwood Blok GD.XV No.43B<br>Metland Transyogi<br>Kab. Bogor,
+                                Kec. Cileungsi, Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="contact-cards-row">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Phone Number</h4>
+                                    <p>02129492292<br>+6281542310375</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email Address</h4>
+                                    <p>support@terasys.co.id</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let form = this;
+            let formData = new FormData(form);
+            let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': token
+                    }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        showPopup("Berhasil!", data.success);
+                        form.reset();
+                    } else if (data.errors) {
+                        let errors = Object.values(data.errors).join("\n");
+                        showPopup("Gagal!", errors);
+                    }
+                })
+                .catch(() => {
+                    showPopup("Error", "Terjadi kesalahan, coba lagi.");
+                });
+        });
+
+        // Fungsi popup
+        function showPopup(title, message) {
+            let popup = document.getElementById("popup");
+            document.getElementById("popupTitle").innerText = title;
+            document.getElementById("popupMessage").innerText = message;
+            popup.style.display = "flex";
+
+            // Tutup manual
+            document.getElementById("popupClose").onclick = function() {
+                popup.style.display = "none";
+            };
+
+            // Tutup otomatis 3 detik
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 3000);
+        }
+    </script>
+
+
 @endsection

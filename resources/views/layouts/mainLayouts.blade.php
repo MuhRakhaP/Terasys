@@ -8,6 +8,8 @@
     <meta name="description"
         content="TERASYS delivers cutting-edge technology solutions, software development, mobile applications, and digital transformation services. Trusted by industry leaders worldwide." />
     <link rel="stylesheet" href="{{ asset(path: 'css/style.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     {{-- <link rel="stylesheet" href="{{ asset(path: 'css/bootstrap.min.css') }}"> --}}
 
 </head>
@@ -21,15 +23,15 @@
                 </div>
 
                 <div class="nav-menu" id="nav-menu">
-                    <a href="#home" class="nav-link">HOME</a>
-                    <a href="#about" class="nav-link">ABOUT</a>
-                    <a href="#services" class="nav-link">SERVICES</a>
-                    <a href="#clients" class="nav-link">CLIENTS</a>
-                    <a href="#news" class="nav-link">NEWS</a>
-                    <a href="#contact" class="nav-link">CONTACT</a>
+                    <a href="{{ url('/#home') }}" class="nav-link">HOME</a>
+                    <a href="{{ url('/#about') }}" class="nav-link">ABOUT</a>
+                    <a href="{{ url('/#services') }}" class="nav-link">SERVICES</a>
+                    <a href="{{ url('/#clients') }}" class="nav-link">CLIENTS</a>
+                    <a href="{{ url('/#news') }}" class="nav-link">NEWS</a>
+                    <a href="{{ url('/#contact') }}" class="nav-link">CONTACT</a>
                 </div>
 
-                <button class="btn btn-primary">Get Started</button>
+                {{-- <button class="btn btn-primary">Get Started</button> --}}
 
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <span></span>
@@ -53,25 +55,26 @@
                             TERASYS is a leading IT solutions provider, delivering innovative technology and digital
                             transformation services to help businesses grow and succeed in the digital era.
                         </p>
-                        <div class="social-links">
+                        {{-- <div class="social-links">
                             <a href="#"><i data-lucide="facebook"></i></a>
                             <a href="#"><i data-lucide="twitter"></i></a>
                             <a href="#"><i data-lucide="linkedin"></i></a>
                             <a href="#"><i data-lucide="instagram"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
+                    <div></div>
                     <div class="footer-column">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#">Enterprise Resource Planning</a></li>
-                            <li><a href="#">Internet Connection</a></li>
-                            <li><a href="#">Web & Server Hosting</a></li>
-                            {{-- <li><a href="#">Broadband Connection</a></li> --}}
-                            <li><a href="#">Server Co-location</a></li>
-                            <li><a href="#">LAN Solutions</a></li>
+                            <li><a href="{{ route('enterpriseResourcePlanning') }}">Enterprise Resource Planning</a>
+                            </li>
+                            <li><a href="{{ route('internetConnection') }}">Internet Connection</a></li>
+                            <li><a href="{{ route(name: 'webServerHosting') }}">Web & Server Hosting</a></li>
+                            <li><a href="{{ route(name: 'serverCoLocation') }}">Server Co-location</a></li>
+                            <li><a href="{{ route(name: 'systemIntegratorService') }}">LAN Solutions</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column">
+                    {{-- <div class="footer-column">
                         <h4>Company</h4>
                         <ul>
                             <li><a href="#">About Us</a></li>
@@ -79,7 +82,7 @@
                             <li><a href="#">News & Updates</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <div class="footer-column">
                         <h4>Contact Info</h4>
                         <div class="contact-info">
@@ -104,11 +107,6 @@
                 </div>
                 <div class="footer-bottom">
                     <p>© 2025 TERASYS. All rights reserved.</p>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
-                    </div>
                 </div>
             </div>
         </div>
