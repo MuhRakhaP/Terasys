@@ -233,8 +233,8 @@
                 <h2>Latest News & Updates</h2>
                 <p>Stay informed about our latest achievements, partnerships, and innovations in the tech industry</p>
             </div>
-
             <div class="news-grid section-animate">
+                <!-- Card 1 -->
                 <div class="news-card">
                     <div class="news-image">
                         <i data-lucide="trending-up"></i>
@@ -247,12 +247,13 @@
                             March 15, 2024
                         </div>
                         <h3>TERASYS Wins Tech Innovation Award 2024</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab
-                            eum dolore</p>
+                        <p>TERASYS berhasil meraih penghargaan “Tech Innovation Award 2024” berkat inovasi di bidang cloud
+                            computing dan kecerdasan buatan.</p>
                         <div class="news-link">Read More →</div>
                     </div>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="news-card">
                     <div class="news-image">
                         <i data-lucide="trending-up"></i>
@@ -264,12 +265,13 @@
                             March 10, 2024
                         </div>
                         <h3>New Partnership with Global Tech Leader</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab
-                            eum dolore</p>
+                        <p>TERASYS resmi menjalin kerja sama strategis dengan perusahaan teknologi global untuk memperkuat
+                            ekosistem digital di Asia Tenggara.</p>
                         <div class="news-link">Read More →</div>
                     </div>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="news-card">
                     <div class="news-image">
                         <i data-lucide="trending-up"></i>
@@ -282,12 +284,13 @@
                             March 5, 2024
                         </div>
                         <h3>Launching Next-Gen Cloud Solutions</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, excepturi. Tempore vero ab
-                            eum dolore</p>
+                        <p>TERASYS meluncurkan solusi cloud generasi terbaru dengan performa lebih cepat, keamanan tingkat
+                            lanjut, dan efisiensi biaya hingga 40%.</p>
                         <div class="news-link">Read More →</div>
                     </div>
                 </div>
             </div>
+
 
         </div>
     </section>
