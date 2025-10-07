@@ -55,17 +55,14 @@
                         <div class="feature-card">
                             <i data-lucide="layers"></i>
                             <h4>All-in-One Integration</h4>
-                            <p>Finance, inventory, and more in one system</p>
                         </div>
                         <div class="feature-card">
                             <i data-lucide="shield-check"></i>
                             <h4>Real-Time Insights</h4>
-                            <p>Accurate data for better decision-making</p>
                         </div>
                         <div class="feature-card">
                             <i data-lucide="rocket"></i>
                             <h4>Scalable & Secure</h4>
-                            <p>Built to grow with your business</p>
                         </div>
                     </div>
                 </div>

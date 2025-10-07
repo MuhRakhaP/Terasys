@@ -361,3 +361,53 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll(".clients .section-animate")
         .forEach((el) => observer.observe(el));
 });
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let form = this;
+    let formData = new FormData(form);
+    let token = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-TOKEN": token,
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.success) {
+                showPopup("Berhasil!", data.success);
+                form.reset();
+            } else if (data.errors) {
+                let errors = Object.values(data.errors).join("\n");
+                showPopup("Gagal!", errors);
+            }
+        })
+        .catch(() => {
+            showPopup("Error", "Terjadi kesalahan, coba lagi.");
+        });
+});
+
+// Fungsi popup
+function showPopup(title, message) {
+    let popup = document.getElementById("popup");
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupMessage").innerText = message;
+    popup.style.display = "flex";
+
+    // Tutup manual
+    document.getElementById("popupClose").onclick = function () {
+        popup.style.display = "none";
+    };
+
+    // Tutup otomatis 3 detik
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 3000);
+}

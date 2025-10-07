@@ -59,12 +59,12 @@
         border: 1px solid #ddd;
         border-radius: 6px;
         text-decoration: none;
-        color: #007bff;
+        color: #ff7f32;
         cursor: pointer;
     }
 
     #pagination .active a {
-        background-color: #007bff;
+        background-color: #ff7f32;
         color: #fff;
     }
 
@@ -279,6 +279,7 @@
                 document.getElementById(btn.dataset.tab).classList.add("active");
             });
         });
+
         // Inisialisasi Peta
         const map = L.map('map').setView([-2.5489, 118.0149], 5); // center Indonesia
 
@@ -286,6 +287,16 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
+
+        // 🔸 Custom Orange Icon
+        const orangeIcon = new L.Icon({
+            iconUrl: "../img/marker-icon-orange.png",
+            shadowUrl: "../img/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
 
         // Data Mall (contoh sebagian, nanti bisa dilengkapi semua)
         const malls = [{
@@ -767,7 +778,9 @@
         // Tambahkan marker ke peta
         const markers = [];
         malls.forEach(mall => {
-            const marker = L.marker([mall.lat, mall.lng])
+            const marker = L.marker([mall.lat, mall.lng], {
+                    icon: orangeIcon
+                }) // ✅ pakai icon custom
                 .addTo(map)
                 .bindPopup(`<b>${mall.name}</b><br>${mall.address}`);
             markers.push({
